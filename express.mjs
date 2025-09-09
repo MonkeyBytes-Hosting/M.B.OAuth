@@ -1,5 +1,6 @@
 // express.mjs
 import express from "express";
+import escape from "escape-html";
 import session from "express-session";
 import passport from "passport";
 import { Strategy as DiscordStrategy } from "passport-discord";
@@ -158,7 +159,7 @@ app.get("/auth-fail", (req, res) => {
 </style></head>
 <body><div class="card">
   <h1>❌ Authentication failed</h1>
-  <p>${(req.query.error || "Unknown error").toString()}</p>
+  <p>${escape((req.query.error || "Unknown error").toString())}</p>
   <p><a href="/auth">Try again</a></p>
 </div></body></html>`);
 });
