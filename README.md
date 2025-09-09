@@ -1,20 +1,21 @@
-# MB News Bot
+# MonkeyBytes Hosting - Discord OAuth Bot
 
-A modern Discord bot that delivers breaking news and supports Discord OAuth2 login for staff control.  
-Built with Node.js, Discord.js v14, Express, and Passport.
+A modern Discord bot developed by **MonkeyBytes Hosting**.  
+It provides **Discord OAuth2 authentication** with an Express backend for managing staff and user verification.  
+Built with Node.js, Discord.js v14, Express, Passport, and Passport-Discord.
 
 ---
 
 ## ✨ Features
-- Aggregates news from multiple sources (BBC, Sky, Al Jazeera, GB News, etc.) via RSS feeds.  
-- Posts updates automatically into dedicated Discord channels.  
-- Discord OAuth2 integration for staff authentication and control.  
-- Logging channels for uptime, errors, and admin actions.  
-- Admin-only slash commands:
-  - /verify-all
-  - /authorize-all
-  - /verify-member
-- Configurable heartbeat/uptime logging.
+- Full **Discord OAuth2 login system** using `passport-discord`.  
+- Uses `express` + `express-session` for handling user sessions.  
+- OAuth2 callback flow integrated with Discord Application.  
+- Logging channels for uptime, errors, and staff actions.  
+- Admin-only slash commands for user control:
+  - `/verify-all`
+  - `/authorize-all`
+  - `/verify-member`
+- Configurable heartbeat/uptime logging.  
 
 ---
 
@@ -22,7 +23,11 @@ Built with Node.js, Discord.js v14, Express, and Passport.
 - Node.js v18 or newer (recommended v20+).  
 - npm (comes with Node).  
 - A Discord bot token.  
-- (Optional) MySQL or SQLite for persistent session storage.
+- Discord Application with OAuth2 enabled:
+  - Client ID  
+  - Client Secret  
+  - Redirect URI (e.g. `http://localhost:3000/callback`)  
+- (Optional) MySQL or SQLite for persistent session storage (default is memory).
 
 ---
 
@@ -30,8 +35,8 @@ Built with Node.js, Discord.js v14, Express, and Passport.
 
 Clone the repository:
 
-git clone https://github.com/yourusername/mb-news-bot.git
-cd mb-news-bot
+git clone https://github.com/MonkeyBytesHosting/mb-oauth-bot.git
+cd mb-oauth-bot
 
 Install dependencies:
 
@@ -41,15 +46,15 @@ npm install
 
 ## ⚙️ Configuration
 
-1. Copy .env.example to .env and fill in your values:
+1. Copy `.env.example` to `.env` and fill in your values:
 
-DISCORD_TOKEN=your-bot-token
-DISCORD_CLIENT_ID=your-client-id
-DISCORD_CLIENT_SECRET=your-client-secret
-CALLBACK_URL=http://localhost:3000/callback
-SESSION_SECRET=supersecretkey
+DISCORD_TOKEN=your-bot-token  
+DISCORD_CLIENT_ID=your-client-id  
+DISCORD_CLIENT_SECRET=your-client-secret  
+CALLBACK_URL=http://localhost:3000/callback  
+SESSION_SECRET=supersecretkey  
 
-2. Adjust channel IDs and other config in your bot files as needed.
+2. Adjust channel IDs and other config in `bot.mjs` and `express.mjs` as needed.
 
 ---
 
@@ -67,11 +72,11 @@ npm run dev
 
 ## 📂 Project Structure
 
-├── bot.mjs          # Main bot entry
-├── express.mjs      # Express + OAuth server
-├── package.json     # Dependencies and scripts
-├── .env.example     # Environment variable template
-└── README.md        # This file
+├── bot.mjs          # Main Discord bot entry  
+├── express.mjs      # Express server + OAuth2 login (passport-discord)  
+├── package.json     # Dependencies and scripts  
+├── .env.example     # Environment variable template  
+└── README.md        # This file  
 
 ---
 
@@ -79,13 +84,13 @@ npm run dev
 
 1. Fork the repo.  
 2. Create a feature branch:  
-   git checkout -b feature/amazing-feature
+   git checkout -b feature/amazing-feature  
 3. Commit changes:  
-   git commit -m "Add amazing feature"
+   git commit -m "Add amazing feature"  
 4. Push to the branch and open a Pull Request.  
 
 ---
 
 ## 📜 License
 
-MIT License © 2025 [MonkeyBytes-Hosting]
+MIT License © 2025 MonkeyBytes Hosting
