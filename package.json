@@ -1,19 +1,29 @@
 {
-  "name": "monkeybytes-auth-bot",
-  "version": "2.2.0",
-  "type": "module",
+  "name": "mb-news-bot",
+  "version": "1.0.0",
+  "description": "Discord news feed bot with OAuth and logging",
   "main": "bot.mjs",
-  "engines": {
-    "node": ">=24.0.0"
-  },
+  "type": "module",
   "scripts": {
-    "start": "node bot.mjs"
+    "start": "node bot.mjs",
+    "dev": "nodemon bot.mjs"
   },
+  "keywords": [
+    "discord",
+    "bot",
+    "news",
+    "oauth"
+  ],
+  "author": "YourNameHere",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^14.15.3",
-    "express": "^5.1.0",
-    "express-session": "^1.17.3",
-    "passport": "^0.7.0",
-    "passport-discord": "^0.1.4",
+    "rss-parser": "^3.13.0",
+    "node-fetch": "^3.3.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }
