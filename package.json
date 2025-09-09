@@ -1,7 +1,7 @@
 {
   "name": "mb-news-bot",
   "version": "1.0.0",
-  "description": "Discord news feed bot with OAuth and logging",
+  "description": "Discord news feed bot with OAuth, news feeds, and logging",
   "main": "bot.mjs",
   "type": "module",
   "scripts": {
@@ -21,7 +21,11 @@
     "rss-parser": "^3.13.0",
     "node-fetch": "^3.3.2",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "passport": "^0.7.0",
+    "passport-oauth2": "^1.7.0",
+    "passport-discord": "^0.1.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
