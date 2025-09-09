@@ -21,6 +21,7 @@ app.use(
     cookie: {
       httpOnly: true,
       sameSite: "lax",
+      secure: true,
       // In HTTPS + cross-site OAuth, you may need: sameSite: "none", secure: true
       // per express-session docs and Chrome behavior. :contentReference[oaicite:1]{index=1}
     },
