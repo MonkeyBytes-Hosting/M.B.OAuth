@@ -20,7 +20,7 @@
     "discord.js": "^14.15.3",
     "rss-parser": "^3.13.0",
     "node-fetch": "^3.3.2",
-    "dotenv": "^16.4.5",
+    "dotenv": "^17.2.2",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "passport": "^0.7.0",
